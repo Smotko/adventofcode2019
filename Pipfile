@@ -1,0 +1,30 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+requests = "*"
+percache = "*"
+
+[requires]
+python_version = "3.7"
+
+[dev-packages]
+python-language-server = {extras = ["all"],version = "*"}
+ipdb = "*"
+pytest-django = "*"
+pytest-watch = "*"
+black = "==19.10b0"
+pylint = "*"
+coverage = "*"
+pytest-cov = "*"
+pyls-black = "*"
+django-stubs = "*"
+factory-boy = "==2.12.0"
+isort = "*"
+importmagic = "*"
+pytest-timeout = "*"
+
+[pipenv]
+allow_prereleases = true
