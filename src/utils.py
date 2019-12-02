@@ -7,6 +7,9 @@ cache = percache.Cache(".cache")
 
 @cache
 def get_input(day):
+    assert os.getenv(
+        "AOC_SESSION"
+    ), "Set the session cookie environment variable (export AOC_SESSION='your session cookie')"
     print("Fetching from server")
     result = requests.get(
         f"https://adventofcode.com/2019/day/{day}/input",
