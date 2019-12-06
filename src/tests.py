@@ -2,6 +2,10 @@ from src import d01, d02
 from .utils import get_input
 
 
+def test_04():
+    assert d04.solve() == (1169, 757)
+
+
 def test_03():
     assert d03.solve(["R8,U5,L5,D3", "U7,R6,D4,L4"]) == (6, 30)
     assert d03.solve(
