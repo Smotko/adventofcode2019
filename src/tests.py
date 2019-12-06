@@ -1,5 +1,44 @@
-from src import d01, d02
+from src import d01, d02, d03, d04, d05, d06
 from .utils import get_input
+
+
+def test_06():
+    assert (
+        d06.solve(
+            """COM)B
+B)C
+C)D
+D)E
+E)F
+B)G
+G)H
+D)I
+E)J
+J)K
+K)L""".splitlines()
+        )
+        == 42
+    )
+    assert d06.solve(get_input(6)) == 142497
+    assert (
+        d06.solve2(
+            """COM)B
+B)C
+C)D
+D)E
+E)F
+B)G
+G)H
+D)I
+E)J
+J)K
+K)L
+K)YOU
+I)SAN""".splitlines()
+        )
+        == 4
+    )
+    assert d06.solve2(get_input(6)) == 301
 
 
 def test_05():
