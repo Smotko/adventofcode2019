@@ -1,5 +1,52 @@
-from src import d01, d02, d03, d04, d05, d06
+from src import d01, d02, d03, d04, d05, d06, d07
 from .utils import get_input
+
+
+def test_07():
+    assert (
+        d07.solve([3, 15, 3, 16, 1002, 16, 10, 16, 1, 16, 15, 15, 4, 15, 99, 0, 0])
+        == 43210
+    )
+    program = [int(i) for i in get_input(7)[0].split(",")]
+    assert d07.solve(program) == 206580
+    assert (
+        d07.solve2(
+            [
+                3,
+                26,
+                1001,
+                26,
+                -4,
+                26,
+                3,
+                27,
+                1002,
+                27,
+                2,
+                27,
+                1,
+                27,
+                26,
+                27,
+                4,
+                27,
+                1001,
+                28,
+                -1,
+                28,
+                1005,
+                28,
+                6,
+                99,
+                0,
+                0,
+                5,
+            ]
+        )
+        == 139629729
+    )
+    program = [int(i) for i in get_input(7)[0].split(",")]
+    assert d07.solve2(program) == 1
 
 
 def test_06():
