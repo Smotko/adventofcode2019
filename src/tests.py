@@ -1,5 +1,12 @@
-from src import d01, d02, d03, d04, d05, d06, d07
-from .utils import get_input
+from src import d01, d02, d03, d04, d05, d06, d07, d08
+from .utils import get_input, get_int_input
+
+
+def test_08():
+    assert d08.solve(["123456789012"], 3, 2) == 1
+    assert d08.solve(["122456789202"], 3, 2) == 2
+    assert d08.solve(get_input(8)) == 2318
+    assert d08.solve2(get_input(8)) == "AHFCB"
 
 
 def test_07():
@@ -46,7 +53,7 @@ def test_07():
         == 139629729
     )
     program = [int(i) for i in get_input(7)[0].split(",")]
-    assert d07.solve2(program) == 1
+    assert d07.solve2(program) == 2299406
 
 
 def test_06():
