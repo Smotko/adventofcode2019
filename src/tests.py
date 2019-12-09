@@ -1,5 +1,25 @@
-from src import d01, d02, d03, d04, d05, d06, d07, d08
+from src import d01, d02, d03, d04, d05, d06, d07, d08, d09
 from .utils import get_input, get_int_input
+
+
+def test_09():
+    # assert (
+    #     d09.solve([3, 15, 3, 16, 1002, 16, 10, 16, 1, 16, 15, 15, 4, 15, 99, 0, 0])
+    #     == 43210
+    # )
+    assert d09.solve([1102, 34915192, 34915192, 7, 4, 7, 99, 0]) == 1219070632396864
+    assert (d09.solve([104, 1125899906842624, 99])) == 1125899906842624
+    assert (
+        d09.solve(
+            [109, 1, 204, -1, 1001, 100, 1, 100, 1008, 100, 16, 101, 1006, 101, 0, 99]
+        )
+        == 99
+    )
+    program = [int(i) for i in get_input(9)[0].split(",")]
+    assert d09.solve(program) == 4288078517
+
+    program = [int(i) for i in get_input(9)[0].split(",")]
+    assert d09.solve2(program) == 69256
 
 
 def test_08():
