@@ -62,7 +62,7 @@ def rel_base(a):
 
 
 def solve_program(program, input, position=0):
-    for _ in range(10000000):
+    for _ in range(110):
         program.append(0)
     command = {
         1: add,
