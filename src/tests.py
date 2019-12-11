@@ -1,5 +1,12 @@
-from src import d01, d02, d03, d04, d05, d06, d07, d08, d09, d10
+from src import d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11
 from .utils import get_input, get_int_input
+
+
+def test_11():
+    program = [int(i) for i in get_input(11)[0].split(",")]
+    assert len(d11.solve(program)) == 1894
+    program = [int(i) for i in get_input(11)[0].split(",")]
+    assert d11.solve2(program) == "JKZLZJBH"
 
 
 def test_10():
