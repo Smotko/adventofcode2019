@@ -1,5 +1,38 @@
-from src import d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11
+from src import d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12
 from .utils import get_input, get_int_input
+
+
+def test_12():
+    assert (
+        d12.solve(
+            """<x=-1, y=0, z=2>
+<x=2, y=-10, z=-7>
+<x=4, y=-8, z=8>
+<x=3, y=5, z=-1>""".splitlines(),
+            10,
+        )
+        == 179
+    )
+    assert d12.solve(get_input(12), 1000) == 7471
+    assert (
+        d12.solve2(
+            """<x=-1, y=0, z=2>
+<x=2, y=-10, z=-7>
+<x=4, y=-8, z=8>
+<x=3, y=5, z=-1>""".splitlines()
+        )
+        == 2772
+    )
+    assert (
+        d12.solve2(
+            """<x=-8, y=-10, z=0>
+<x=5, y=5, z=10>
+<x=2, y=-7, z=3>
+<x=9, y=-8, z=-3>""".splitlines()
+        )
+        == 4686774924
+    )
+    assert d12.solve2(get_input(12)) == 376243355967784
 
 
 def test_11():
