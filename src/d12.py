@@ -66,10 +66,10 @@ def solve2(input):
         states = set()
 
         axis_positions = tuple(pos[axis] for pos in positions)
-        axis_speeds = (0, 0, 0, 0)
+        axis_speeds = [0, 0, 0, 0]
 
         for i in range(1000000):
-            key = (axis_positions, axis_speeds)
+            key = (axis_positions, tuple(axis_speeds))
             if key in states:
                 intervals[axis] = i
                 break
@@ -77,15 +77,15 @@ def solve2(input):
             states.add(key)
 
             new_axis_speeds = []
-            for pos_a, vel_a in zip(axis_positions, axis_speeds):
-                for pos_b in axis_positions:
-                    if pos_a < pos_b:
-                        vel_a += 1
-                    elif pos_a > pos_b:
-                        vel_a -= 1
-                new_axis_speeds.append(vel_a)
+            for i in range(len(axis_positions)):
+                for j in range(i, len(axis_positions)):
+                    if axis_positions[i] < axis_positions[j]:
+                        axis_speeds[i] += 1
+                    elif axis_positions[i] > axis_positions[j]:
+                        axis_speeds[i] -= 1
+                # new_axis_speeds.append(vel_a)
 
-            axis_speeds = tuple(new_axis_speeds)
+            # axis_speeds = new_axis_speeds
 
             axis_positions = tuple(
                 val + speed for val, speed in zip(axis_positions, axis_speeds)

@@ -1,5 +1,13 @@
-from src import d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12
+from src import d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13
 from .utils import get_input, get_int_input
+
+
+def test_13():
+    program = [int(i) for i in get_input(13)[0].split(",")]
+    assert d13.solve(program) == 312
+
+    program = [int(i) for i in get_input(13)[0].split(",")]
+    assert d13.solve2(program) == 15909
 
 
 def test_12():
